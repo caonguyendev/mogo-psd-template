@@ -1,0 +1,28 @@
+section.work 
+  .container
+    +blockBox({
+      caption: "What we do", 
+      heading: "Some of our work", 
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore repudiandae impedit quam eligendi perspiciatis ex illum commodi nobis, delectus at quia? Magni laborum aliquid consequuntur explicabo eos quo deserunt dicta."
+    })
+    .work-list
+      .work-column
+        +workItem
+        +workItem("../../images/img-work2.png", "fa fa-cog", "Frontend Developer")
+      .work-column
+        +workItem("../../images/img-work3.png")
+        +workItem("../../images/img-work4.png")
+      .work-column 
+        +workItem("../../images/img-work5.png", "fa fa-heart", "Super Heart", "work-item--full")
+      .work-column
+        +workItem("../../images/img-work6.png")
+        +workItem("../../images/img-work7.png")
+    //- .work-grid
+    //-   +workItem
+    //-   +workItem("../../images/img-work3.png", "fa fa-cog", "Frontend Developer")
+    //-   +workItem("../../images/img-work2.png")
+    //-   +workItem("../../images/img-work4.png")
+    //-   +workItem("../../images/img-work5.png", "fa fa-heart", "Super Heart", "work-item--full")
+    //-   +workItem("../../images/img-work6.png")
+    //-   +workItem("../../images/img-work7.png")
+  

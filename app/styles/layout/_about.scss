@@ -1,0 +1,65 @@
+.about {
+  padding-top: 9rem;
+  padding-bottom: 11rem;
+  // Flexbox
+  // &-list {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   margin-left: -3rem;
+  // }
+  // &-item {
+  //   width: calc(33.33% - 3rem);
+  //   margin-left: 3rem;
+  // }
+
+  // Grid
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+  }
+  &-content {
+    color: white;
+    text-align: center;
+  }
+  &-icon {
+    font-size: 2rem;
+  }
+  &-title {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.4;
+    @include textClamp;
+  }
+  @include maxWidth(1023px) {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    // Flexbox responsive about-list
+    // &-item {
+    //   width: 100%;
+    //   margin-bottom: 2.5rem;
+    // }
+    // Grid responsive about-list
+    &-list {
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      grid-template-columns: unset;
+      overflow-x: auto;
+      @include hideScroll;
+      scroll-snap-type: x mandatory;
+      padding: 1rem;
+    }
+    &-item {
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
+  }
+}
+@include hoverEffect(".about-item", ".about-content");

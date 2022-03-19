@@ -1,0 +1,105 @@
+.quote {
+  padding: 6.5rem 0;
+  @include bg($gray-color);
+  &-image {
+    @include size(21rem);
+    object-fit: cover;
+    border-radius: 100rem;
+    margin-right: 2.5rem;
+  }
+  &-item {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+    @include flexbox(center, space-between);
+  }
+  &-icon {
+    @include size(15rem);
+    @include flexbox(center, center);
+    border: 3px solid $third-color;
+    flex-shrink: 0;
+    margin-right: 6rem;
+  }
+  &-desc {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: $secondary-font;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    color: $text-color;
+    @include textClamp(3);
+  }
+  &-author {
+    font-family: $third-font;
+    font-size: 2.4rem;
+    position: relative;
+    padding-left: 7rem;
+    &::before {
+      content: "";
+      @include absoluteCenter("top");
+      left: 0;
+      @include size(6rem, 4px);
+      @include bg($primary-color);
+    }
+  }
+
+  // slick slider
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
+  .slick-arrow {
+    @include bg(transparent);
+    @include absoluteCenter(top);
+    border: 0;
+    font-size: 3rem;
+    color: $gray-dark-color;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    z-index: 10;
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+
+  @include maxWidth(767px) {
+    &-content {
+      padding: 0;
+      flex-direction: column;
+    }
+    &-icon {
+      @include size(10rem);
+      img {
+        max-width: 50%;
+      }
+    }
+    &-image {
+      margin: 0 auto;
+    }
+    &-info {
+      padding-left: 0;
+      margin-top: 3rem;
+    }
+    &-desc {
+      display: block;
+      font-size: 1.6rem;
+    }
+    &-author {
+      font-size: 2rem;
+    }
+    &-arrow {
+      display: none;
+    }
+    &-item {
+      padding: 0;
+    }
+    &-icon {
+      margin: 0 auto;
+    }
+    & .slick-initialized .slick-slide {
+      display: block;
+    }
+  }
+}

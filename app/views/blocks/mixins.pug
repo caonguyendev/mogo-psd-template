@@ -1,0 +1,104 @@
+mixin menuLink(data)
+  li.header-menu-item 
+    a.header-menu-link(href= data.href)= data.title 
+
+mixin headerBottomItem(data)
+  .header-bottom-item 
+    span.header-bottom-number= data.number
+    span.header-bottom-text= data.text
+
+mixin blockBox(data)
+  .block-box
+    h3.block-box-caption= data.caption 
+    h2.block-box-heading= data.heading 
+    if data.desc 
+      p.block-box-desc= data.desc
+mixin aboutItem(data)
+  .about-item 
+    img.about-img(src= data.src, alt= data.alt)
+    .about-content 
+      i.about-icon(class= data.icon)
+      span.about-title= data.title
+mixin numberItem(data)
+  .number-item
+    h4.number-item-count= data.count
+    span.number-item-text= data.text
+mixin serviceItem(data)
+  .service-item
+    img.service-item-icon(src= data.src)
+    .service-item-info 
+      h3.service-item-title= data.title  
+      p.service-item-desc= data.desc
+mixin wedoItem(data)
+  .wedo-item(class= data.active) 
+    .wedo-item-header 
+      img(src= data.src).wedo-item-icon
+      h3.wedo-item-title= data.title 
+      i.fal.fa-angle-up.wedo-item-arrow
+    .wedo-item-content
+      .wedo-item-text= data.text
+mixin teamSocial(data)
+  ul.team-social 
+    li.team-social-item 
+      a.team-social-link(href= data.facebook)
+        i.fab.fa-facebook-f
+    li.team-social-item 
+      a.team-social-link(href= data.twitter)
+        i.fab.fa-twitter
+    li.team-social-item 
+      a.team-social-link(href= data.pinterest)
+        i.fab.fa-pinterest
+    li.team-social-item 
+      a.team-social-link(href= data.instagram)
+        i.fab.fa-instagram
+mixin teamItem(data)
+  .team-item
+    .team-main
+      img(src= data.src).team-image
+      .team-content 
+        if block
+          block 
+    .team-info
+      h3.team-name= data.name
+      span.team-position= data.position
+mixin workItem(src = "../../images/img-work1.png", iconClass = "fa fa-home", title = "Photographer Super", full = "", desc = "Lorem lorem lorem lorem")
+  .work-item(class= full)
+    img(src= src).work-image
+    .work-content 
+      i.work-icon(class= iconClass) 
+      h3.work-title= title 
+      span.work-desc.text.text--light= desc
+mixin peopleItem(data)
+  li.people-item 
+    img.people-avatar(src= data.src)
+    .people-info 
+      h3.people-name= data.name
+      span.people-job.text.text--light= data.job
+      p.people-desc.text.text--normal= data.desc
+mixin storyItem(src= "https://images.unsplash.com/photo-1647482289901-81f3ffbdf04a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60", dateNumber = 15, dateText = "Jan", title = "Lorem ipsum dolor sit amet consectetur.", desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, qui assumenda quaerat sit, a vel repellendus impedit tempora accusamus magni tenetur amet. Explicabo nemo dolorem dolore doloribus aliquam incidunt iusto!", view = 542, comments = 245)
+  li.story-item 
+    .story-media 
+      img.story-image(src= src)
+      .story-date
+        span.story-date-number= dateNumber
+        span.story-date-text.text.text--light= dateText
+    h3.story-title= title
+    .story-desc
+      p.story-desc-inner.text.text--normal= desc
+    .story-meta
+      .story-meta-item 
+        i.fa.fa-eye.story-meta-icon 
+        span.story-meta-number.text.text--italic= view
+      .story-meta-item 
+        i.fa.fa-comment.story-meta-icon 
+        span.story-meta-number.text.text--italic= comments
+mixin quoteItem(src = "../../images/img-quote.png", type = false, desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, rerum consequatur ut ducimus quasi iste ullam dolores perferendis magnam corporis amet eaque consequuntur quos temporibus neque, facere doloribus quae ipsum.", author = "Jon Doe")
+  .quote-item 
+    if type == false
+      .quote-icon 
+        img(src= src)
+    else 
+      img(src= src).quote-image
+    .quote-info 
+      p.quote-desc= desc
+      span.quote-author= author

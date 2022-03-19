@@ -1,0 +1,44 @@
+section.team 
+  .container 
+    +blockBox({
+      caption: "Who we are", 
+      heading: "Meet out team", 
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, rerum consequatur ut ducimus quasi iste ullam dolores perferendis magnam corporis amet eaque consequuntur quos temporibus neque, facere doloribus quae ipsum."
+    })
+    .team-list 
+      +teamItem({
+        src: "../../images/img-team1.png", 
+        name: "Matthew Dix", 
+        position: "Graphic Design"
+      })
+        +teamSocial({
+          facebook: "#matthew",
+          twitter: "#matthew",
+          pinterest: "#matthew",
+          instagram: "#matthew",
+        })
+      +teamItem({
+        src: "../../images/img-team2.png", 
+        name: "Christopher Campbell", 
+        position: "Branding/UX Design"
+      })
+        +teamSocial({
+          facebook: "#chris",
+          twitter: "#chris",
+          pinterest: "#chris",
+          instagram: "#chris",
+        })
+      +teamItem({
+        src: "../../images/img-team3.png", 
+        name:"Micheal Fertig",
+        position: "Developer"
+      })
+        +teamSocial({
+            facebook: "#michael",
+            twitter: "#michael",
+            pinterest: "#michael",
+            instagram: "#michael",
+        })
+section.brand
+  .container
+    img(src="../../images/img-logos.png")

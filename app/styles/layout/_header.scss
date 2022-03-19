@@ -1,0 +1,258 @@
+.header {
+  min-height: 100rem;
+  background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.8),
+      rgba($secondary-color, 0.8)
+    ),
+    url("../images/img-header-bg.jpg") no-repeat center / cover;
+  color: white;
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 2.5rem;
+  }
+
+  &-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  &-menu {
+    display: flex;
+  }
+
+  &-menu-item:not(:first-child) {
+    margin-left: 5rem;
+  }
+
+  &-menu-link {
+    text-transform: uppercase;
+    transition: all 0.25s linear;
+  }
+
+  &-menu-icon {
+    color: white;
+    transition: all 0.25s linear;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &-content {
+    padding-top: 17rem;
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto;
+
+    &-caption {
+      font-size: 7.2rem;
+      font-family: $third-font;
+      margin-bottom: 3rem;
+    }
+
+    &-main {
+      font-size: 15rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding-bottom: 7rem;
+      margin-bottom: 5rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        bottom: 0;
+        @include absoluteCenter();
+        @include size(6rem, 0.5rem);
+        background-color: white;
+      }
+    }
+
+    &-more {
+      padding: 1.2rem 3rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      border: 4px solid white;
+      color: white;
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    margin-top: 15.5rem;
+    padding-bottom: 2.5rem;
+
+    &-item {
+      flex: 1;
+      padding-top: 2.5rem;
+      border-top: 5px solid white;
+      opacity: 0.6;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s linear;
+
+      &:not(:first-child) {
+        margin-left: 3rem;
+      }
+    }
+
+    &-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(7rem, 0.5rem);
+      transform: translateY(-100%);
+      background-color: $primary-color;
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+
+    &-item:hover,
+    &-item.is-active {
+      opacity: 1;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &-number {
+      font-size: 2.4rem;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+    }
+
+    &-text {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      margin-left: 1rem;
+    }
+  }
+
+  &-toggle {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+  }
+
+  @include maxWidth(1023px) {
+    min-height: unset;
+
+    .header-content {
+      padding-top: 10rem;
+    }
+
+    .header-content-main {
+      font-size: 10rem;
+    }
+
+    .header-bottom {
+      margin-top: 10.5rem;
+    }
+  }
+
+  @include minWidth(768px) {
+    .header-menu-item:not(:first-child) {
+      margin-left: 3rem;
+    }
+
+    &-menu-link {
+      padding-bottom: 1rem;
+      border-bottom: 4px solid transparent;
+      color: white;
+
+      &:hover {
+        color: $secondary-color;
+        border-bottom-color: $secondary-color;
+      }
+    }
+  }
+
+  @include maxWidth(767px) {
+    .header-bottom-text {
+      display: none;
+    }
+
+    .header-toggle {
+      display: block;
+      align-self: center;
+    }
+
+    .header-content {
+      padding-top: 5rem;
+    }
+
+    .header-bottom {
+      margin-top: 5.5rem;
+    }
+
+    .header-content-caption {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .header-content-main {
+      font-size: 5rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .header-bottom-item {
+      text-align: center;
+      padding-top: 1.5rem;
+    }
+
+    .header-bottom-item::before {
+      width: 35%;
+    }
+
+    .header-menu {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 300px;
+      padding: 2rem;
+      background-color: white;
+      flex-direction: column;
+      z-index: 10;
+      transform: translateX(100%);
+      transition: transform 0.25s ease-in;
+    }
+
+    .header-menu.is-expand {
+      transform: translateX(0);
+    }
+
+    .header-menu-item {
+      margin: 0;
+    }
+
+    .header-menu-icon {
+      display: block;
+      color: $title-color;
+      font-size: 1.8rem;
+      padding: 15px;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    .header-menu-link {
+      font-size: 1.8rem;
+      display: block;
+      color: $title-color;
+      padding: 15px;
+      border-radius: 4px;
+
+      &:hover {
+        color: white;
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
