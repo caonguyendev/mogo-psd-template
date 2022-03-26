@@ -42,7 +42,7 @@
     @include bg($secondary-color);
     font-size: 3rem;
     color: $primary-color;
-    transition: all 0.2s linear;
+    transition: all 0.35s linear;
     &:hover {
       @include bg($primary-color);
       color: white;

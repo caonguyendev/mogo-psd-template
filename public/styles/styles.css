@@ -24,7 +24,8 @@ img {
 
 body {
   color: #333;
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif; }
 
 input,
 button {
@@ -171,8 +172,8 @@ button {
       opacity: 0.6;
       position: relative;
       cursor: pointer;
-      -webkit-transition: all 0.2s linear;
-      transition: all 0.2s linear; }
+      -webkit-transition: all 0.35s linear;
+      transition: all 0.35s linear; }
       .header-bottom-item:not(:first-child) {
         margin-left: 3rem; }
     .header-bottom-item::before {
@@ -186,8 +187,9 @@ button {
       transform: translateY(-100%);
       background-color: #e98283;
       opacity: 0;
-      -webkit-transition: all 0.2s linear;
-      transition: all 0.2s linear; }
+      -webkit-transition: all 0.35s linear;
+      transition: all 0.35s linear;
+      will-change: transition; }
     .header-bottom-item:hover, .header-bottom-item.is-active {
       opacity: 1; }
       .header-bottom-item:hover::before, .header-bottom-item.is-active::before {
@@ -349,11 +351,9 @@ button {
   position: relative;
   z-index: 1; }
   .about-item > * {
-    -webkit-transition: -webkit-transform 0.25s linear;
-    transition: -webkit-transform 0.25s linear;
-    transition: transform 0.25s linear;
-    transition: transform 0.25s linear, -webkit-transform 0.25s linear;
-    will-change: "true"; }
+    -webkit-transition: all 0.28s linear;
+    transition: all 0.28s linear;
+    will-change: transform; }
   .about-item .about-content {
     position: absolute;
     top: 0;
@@ -897,8 +897,8 @@ button {
     background-color: #eed789;
     font-size: 3rem;
     color: #e98283;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear; }
+    -webkit-transition: all 0.35s linear;
+    transition: all 0.35s linear; }
     .team-social-link:hover {
       background-color: #e98283;
       color: white; }
@@ -971,11 +971,9 @@ button {
   position: relative;
   z-index: 1; }
   .team-main > * {
-    -webkit-transition: -webkit-transform 0.25s linear;
-    transition: -webkit-transform 0.25s linear;
-    transition: transform 0.25s linear;
-    transition: transform 0.25s linear, -webkit-transform 0.25s linear;
-    will-change: "true"; }
+    -webkit-transition: all 0.28s linear;
+    transition: all 0.28s linear;
+    will-change: transform; }
   .team-main .team-content {
     position: absolute;
     top: 0;
@@ -1095,11 +1093,9 @@ button {
   position: relative;
   z-index: 1; }
   .work-item > * {
-    -webkit-transition: -webkit-transform 0.25s linear;
-    transition: -webkit-transform 0.25s linear;
-    transition: transform 0.25s linear;
-    transition: transform 0.25s linear, -webkit-transform 0.25s linear;
-    will-change: "false"; }
+    -webkit-transition: all 0.28s linear;
+    transition: all 0.28s linear;
+    will-change: transform; }
   .work-item .work-content {
     position: absolute;
     top: 0;

@@ -74,8 +74,8 @@
     position: relative;
     z-index: 1;
     & > * {
-      transition: transform 0.25s linear;
-      will-change: $transform;
+      transition: all 0.28s linear;
+      will-change: transform;
     }
     #{$contentClass} {
       @include absoluteFull();
